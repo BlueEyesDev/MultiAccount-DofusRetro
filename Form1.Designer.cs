@@ -29,10 +29,14 @@ namespace MultiWindows
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.formSkin1 = new FlatUI.FormSkin();
+            this.flatButton2 = new FlatUI.FlatButton();
             this.flatButton1 = new FlatUI.FlatButton();
             this.flatTabControl1 = new FlatUI.FlatTabControl();
             this.flatClose1 = new FlatUI.FlatClose();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.formSkin1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +45,7 @@ namespace MultiWindows
             this.formSkin1.BackColor = System.Drawing.Color.White;
             this.formSkin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.formSkin1.Controls.Add(this.flatButton2);
             this.formSkin1.Controls.Add(this.flatButton1);
             this.formSkin1.Controls.Add(this.flatTabControl1);
             this.formSkin1.Controls.Add(this.flatClose1);
@@ -55,6 +60,22 @@ namespace MultiWindows
             this.formSkin1.TabIndex = 0;
             this.formSkin1.Text = "MultiScreen";
             // 
+            // flatButton2
+            // 
+            this.flatButton2.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.flatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton2.Location = new System.Drawing.Point(156, 12);
+            this.flatButton2.Name = "flatButton2";
+            this.flatButton2.Rounded = false;
+            this.flatButton2.Size = new System.Drawing.Size(23, 32);
+            this.flatButton2.TabIndex = 3;
+            this.flatButton2.Text = "-";
+            this.flatButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.toolTip2.SetToolTip(this.flatButton2, "Close the current dofus instance");
+            this.flatButton2.Click += new System.EventHandler(this.flatButton2_Click);
+            // 
             // flatButton1
             // 
             this.flatButton1.BackColor = System.Drawing.Color.Transparent;
@@ -68,6 +89,7 @@ namespace MultiWindows
             this.flatButton1.TabIndex = 2;
             this.flatButton1.Text = "+";
             this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.toolTip1.SetToolTip(this.flatButton1, "Open a new dofus instance");
             this.flatButton1.Click += new System.EventHandler(this.flatButton1_Click);
             // 
             // flatTabControl1
@@ -119,6 +141,9 @@ namespace MultiWindows
         private FlatUI.FlatClose flatClose1;
         private FlatUI.FlatButton flatButton1;
         public FlatUI.FlatTabControl flatTabControl1;
+        private FlatUI.FlatButton flatButton2;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

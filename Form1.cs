@@ -39,6 +39,7 @@ namespace MultiWindows
         class ProcessInfo {
             public TabPage tabpage { get; set; }
             public IntPtr handle { get; set; }
+            public Process Dofus { get; set; }
         }
         static void TabName() {
             while (true) {
@@ -84,8 +85,17 @@ namespace MultiWindows
                 _handleWindows = _Process.MainWindowHandle;
             }
             SetParent(_handleWindows, tabPage.Handle);
-            DofusProcess.Add(new ProcessInfo() { handle = _handleWindows, tabpage = tabPage });
+            DofusProcess.Add(new ProcessInfo() { handle = _handleWindows, tabpage = tabPage, Dofus = _Process });
             MoveWindow(_handleWindows, -10, -50, tabPage.Width + 20, tabPage.Height + 60, true);
+        }
+
+        private void flatButton2_Click(object sender, EventArgs e)
+        {
+            if (flatTabControl1.SelectedIndex >= 0) {
+                DofusProcess[flatTabControl1.SelectedIndex].Dofus.Kill();
+                DofusProcess.RemoveAt(flatTabControl1.SelectedIndex);
+                flatTabControl1.TabPages.RemoveAt(flatTabControl1.SelectedIndex);
+            }
         }
     }
 }
