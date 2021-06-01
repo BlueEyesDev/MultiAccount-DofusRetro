@@ -20,5 +20,5 @@
 ![alt text](https://github.com/BlueEyesDev/MultiScreen-DofusRetro/blob/main/Main.png?raw=true)
 
 
-Dofus est un MMORPG édité par Ankama. "MultiAccount-DofusRetro" est un logiciel non-officiel sans aucun lien avec Ankama.
+Dofus est un MMORPG édité par Ankama. "MultiAccount-DofusRetro" est un logiciel non-officiel sans aucun lien avec Ankama.</br>
 Certaines illustrations sont la propriété d'Ankama Studio et de Dofus - Tous droits réservés
