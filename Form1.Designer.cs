@@ -30,6 +30,7 @@ namespace MultiWindows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.formSkin1 = new FlatUI.FormSkin();
             this.flatButton2 = new FlatUI.FlatButton();
             this.flatButton1 = new FlatUI.FlatButton();
@@ -125,6 +126,7 @@ namespace MultiWindows
             this.ClientSize = new System.Drawing.Size(349, 212);
             this.Controls.Add(this.formSkin1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MultiWindows";
