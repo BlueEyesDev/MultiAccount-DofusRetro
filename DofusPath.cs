@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.IO;
 namespace MultiWindows
 {
@@ -27,8 +19,15 @@ namespace MultiWindows
 
         private void flatButton2_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("DofusPath.txt", flatTextBox1.Text);
-            Close();
+            if (flatTextBox1.Text != string.Empty && File.Exists(flatTextBox1.Text)) { 
+                File.WriteAllText("DofusPath.txt", flatTextBox1.Text);
+                Close();
+            }
+        }
+
+        private void flatClose1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

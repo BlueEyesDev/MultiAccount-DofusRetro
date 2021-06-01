@@ -10,18 +10,12 @@ namespace MultiWindows
 {
     static class Program
     {
-        /// <summary>
-        /// Point d'entrée principal de l'application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-
             if (!File.Exists("DofusPath.txt"))
                 new DofusPath().ShowDialog();
-
             Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
     }

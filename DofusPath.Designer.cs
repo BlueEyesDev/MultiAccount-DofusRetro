@@ -34,6 +34,7 @@ namespace MultiWindows
             this.flatButton1 = new FlatUI.FlatButton();
             this.flatTextBox1 = new FlatUI.FlatTextBox();
             this.flatLabel1 = new FlatUI.FlatLabel();
+            this.flatClose1 = new FlatUI.FlatClose();
             this.formSkin1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@ namespace MultiWindows
             this.formSkin1.BackColor = System.Drawing.Color.White;
             this.formSkin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.formSkin1.Controls.Add(this.flatClose1);
             this.formSkin1.Controls.Add(this.flatButton2);
             this.formSkin1.Controls.Add(this.flatButton1);
             this.formSkin1.Controls.Add(this.flatTextBox1);
@@ -115,6 +117,20 @@ namespace MultiWindows
             this.flatLabel1.TabIndex = 1;
             this.flatLabel1.Text = "Executable path (Dofus Retro.exe)";
             // 
+            // flatClose1
+            // 
+            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatClose1.BackColor = System.Drawing.Color.White;
+            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
+            this.flatClose1.Location = new System.Drawing.Point(463, 12);
+            this.flatClose1.Name = "flatClose1";
+            this.flatClose1.Size = new System.Drawing.Size(18, 18);
+            this.flatClose1.TabIndex = 4;
+            this.flatClose1.Text = "flatClose1";
+            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatClose1.Click += new System.EventHandler(this.flatClose1_Click);
+            // 
             // DofusPath
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,5 +155,6 @@ namespace MultiWindows
         private FlatUI.FlatButton flatButton2;
         private FlatUI.FlatButton flatButton1;
         private FlatUI.FlatLabel flatLabel1;
+        private FlatClose flatClose1;
     }
 }
