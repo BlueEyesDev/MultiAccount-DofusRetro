@@ -5,14 +5,14 @@
 - **Dofus Retro v1.34.13**
 
 ### Shortcut Keyboard
-- **F1** TabPage1
-- **F2** TabPage2
-- **F3** TabPage3
-- **F4** TabPage4
-- **F5** TabPage5
-- **F6** TabPage6
-- **F7** TabPage7
-- **F8** TabPage8
+- **F1** = Account 1
+- **F2** = Account 2
+- **F3** = Account 3
+- **F4** = Account 4
+- **F5** = Account 5
+- **F6** = Account 6
+- **F7** = Account 7
+- **F8** = Account 8
 
 ### ScreenShot :
 
