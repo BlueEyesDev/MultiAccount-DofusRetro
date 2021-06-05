@@ -54,6 +54,13 @@ namespace MultiWindows
         public Form1() {
             new Thread(new ThreadStart(TabName)) { IsBackground = true }.Start();
             InitializeComponent();
+            if (!File.Exists("Account.txt"))
+            {
+                flatButton3.Visible = false;
+                flatProgressBar1.Visible = false;
+            }
+            else
+                flatProgressBar1.Maximum = File.ReadAllLines("Account.txt").Length;
             Rectangle SizeScreen = Screen.PrimaryScreen.Bounds;
             flatTabControl1.Size = new Size(SizeScreen.Width, SizeScreen.Height - 50);
             _rawinput = new RawInput(Handle, false);
@@ -96,6 +103,39 @@ namespace MultiWindows
                 DofusProcess.RemoveAt(flatTabControl1.SelectedIndex);
                 flatTabControl1.TabPages.RemoveAt(flatTabControl1.SelectedIndex);
             }
+        }
+        private void AutoConnect() {
+            foreach (var Account in File.ReadAllLines("Account.txt")) {
+                string[] Info = Account.Split('\t');
+                Process Dofus = Process.Start(DofusPath);
+                Thread.Sleep(5000);
+                foreach (var item in Info[0])
+                {
+                    SendKeys.SendWait(item.ToString());
+                }
+                SendKeys.SendWait("{TAB}");
+                foreach (var item in Info[1])
+                {
+                    SendKeys.SendWait(item.ToString());
+                }
+                SendKeys.SendWait("{ENTER}");
+                Thread.Sleep(1000);
+                flatTabControl1.BeginInvoke((MethodInvoker)delegate () {
+                    TabPage NewTabPage = new TabPage() { Text = "New TabPage" };
+                    flatTabControl1.TabPages.Add(NewTabPage);
+                    AttachDofus(NewTabPage, Dofus.Id);
+                    flatProgressBar1.Value += 1;
+                });
+            }
+            flatTabControl1.BeginInvoke((MethodInvoker)delegate () {
+                flatProgressBar1.Visible = false;
+                flatProgressBar1.Value = 0;
+            });
+        }
+        private void flatButton3_Click(object sender, EventArgs e)
+        {
+            new Thread(new ThreadStart(AutoConnect)) { IsBackground = true}.Start();
+            
         }
     }
 }

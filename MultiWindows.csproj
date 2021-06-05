@@ -84,6 +84,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ThemeFlat\FlatColors.cs" />
+    <Compile Include="ThemeFlat\FlatProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ThemeFlat\FlatTabControl.cs">
       <SubType>Component</SubType>
     </Compile>

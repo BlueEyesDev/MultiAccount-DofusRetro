@@ -31,13 +31,15 @@ namespace MultiWindows
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.formSkin1 = new FlatUI.FormSkin();
+            this.flatProgressBar1 = new FlatUI.FlatProgressBar();
+            this.flatButton3 = new FlatUI.FlatButton();
             this.flatButton2 = new FlatUI.FlatButton();
             this.flatButton1 = new FlatUI.FlatButton();
             this.flatTabControl1 = new FlatUI.FlatTabControl();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.formSkin1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +48,8 @@ namespace MultiWindows
             this.formSkin1.BackColor = System.Drawing.Color.White;
             this.formSkin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.formSkin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.formSkin1.Controls.Add(this.flatProgressBar1);
+            this.formSkin1.Controls.Add(this.flatButton3);
             this.formSkin1.Controls.Add(this.flatButton2);
             this.formSkin1.Controls.Add(this.flatButton1);
             this.formSkin1.Controls.Add(this.flatTabControl1);
@@ -57,9 +61,40 @@ namespace MultiWindows
             this.formSkin1.HeaderMaximize = false;
             this.formSkin1.Location = new System.Drawing.Point(0, 0);
             this.formSkin1.Name = "formSkin1";
-            this.formSkin1.Size = new System.Drawing.Size(349, 212);
+            this.formSkin1.Size = new System.Drawing.Size(478, 212);
             this.formSkin1.TabIndex = 0;
             this.formSkin1.Text = "MultiScreen";
+            // 
+            // flatProgressBar1
+            // 
+            this.flatProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.flatProgressBar1.DarkerProgress = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(148)))), ((int)(((byte)(92)))));
+            this.flatProgressBar1.Location = new System.Drawing.Point(300, 0);
+            this.flatProgressBar1.Maximum = 100;
+            this.flatProgressBar1.Name = "flatProgressBar1";
+            this.flatProgressBar1.Pattern = false;
+            this.flatProgressBar1.PercentSign = true;
+            this.flatProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatProgressBar1.ShowBalloon = true;
+            this.flatProgressBar1.Size = new System.Drawing.Size(137, 42);
+            this.flatProgressBar1.TabIndex = 5;
+            this.flatProgressBar1.Text = "flatProgressBar1";
+            this.flatProgressBar1.Value = 0;
+            // 
+            // flatButton3
+            // 
+            this.flatButton3.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton3.Location = new System.Drawing.Point(185, 12);
+            this.flatButton3.Name = "flatButton3";
+            this.flatButton3.Rounded = false;
+            this.flatButton3.Size = new System.Drawing.Size(109, 32);
+            this.flatButton3.TabIndex = 4;
+            this.flatButton3.Text = "Auto Connect";
+            this.flatButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatButton3.Click += new System.EventHandler(this.flatButton3_Click);
             // 
             // flatButton2
             // 
@@ -102,7 +137,7 @@ namespace MultiWindows
             this.flatTabControl1.Location = new System.Drawing.Point(0, 50);
             this.flatTabControl1.Name = "flatTabControl1";
             this.flatTabControl1.SelectedIndex = 0;
-            this.flatTabControl1.Size = new System.Drawing.Size(350, 163);
+            this.flatTabControl1.Size = new System.Drawing.Size(478, 163);
             this.flatTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.flatTabControl1.TabIndex = 1;
             // 
@@ -112,7 +147,7 @@ namespace MultiWindows
             this.flatClose1.BackColor = System.Drawing.Color.White;
             this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
-            this.flatClose1.Location = new System.Drawing.Point(319, 12);
+            this.flatClose1.Location = new System.Drawing.Point(448, 12);
             this.flatClose1.Name = "flatClose1";
             this.flatClose1.Size = new System.Drawing.Size(18, 18);
             this.flatClose1.TabIndex = 0;
@@ -123,7 +158,7 @@ namespace MultiWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 212);
+            this.ClientSize = new System.Drawing.Size(478, 212);
             this.Controls.Add(this.formSkin1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -146,6 +181,8 @@ namespace MultiWindows
         private FlatUI.FlatButton flatButton2;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private FlatUI.FlatButton flatButton3;
+        private FlatUI.FlatProgressBar flatProgressBar1;
     }
 }
 
