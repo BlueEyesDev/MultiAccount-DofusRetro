@@ -2,7 +2,7 @@
  Window management for multiple accounts
 
 ### Works for versions:
-- **Dofus Retro v1.34.13**
+- **Dofus Retro v1.35.***
 
 ### Shortcut Keyboard
 - **F1** = Account 1
