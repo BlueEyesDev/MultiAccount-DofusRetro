@@ -20,7 +20,6 @@
 ```
 Account1	Password1
 Account2	Password2
-...
 ```
 
 ### ScreenShot :
