@@ -108,7 +108,7 @@ namespace MultiWindows
             foreach (var Account in File.ReadAllLines("Account.txt")) {
                 string[] Info = Account.Split('\t');
                 Process Dofus = Process.Start(DofusPath);
-                Thread.Sleep(5000);
+                Thread.Sleep(7500);
                 foreach (var item in Info[0])
                 {
                     SendKeys.SendWait(item.ToString());
